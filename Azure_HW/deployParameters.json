@@ -1,0 +1,94 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "mc-dmyb-vm1"
+        },
+        "networkSecurityGroupName": {
+            "value": "mc-dmyb-vm-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "default-allow-ssh",
+                    "properties": {
+                        "priority": 1000,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceApplicationSecurityGroups": [],
+                        "destinationApplicationSecurityGroups": [],
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "mc-dmyb-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "172.19.0.0/16"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "172.19.0.0/24"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName": {
+            "value": "mc-dmyb-vm-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "mc-dmyb-vm"
+        },
+        "virtualMachineComputerName": {
+            "value": "mc-dmyb-vm"
+        },
+        "virtualMachineRG": {
+            "value": "mc-dmyb"
+        },
+        "diskNameSalt": {
+            "value": "20210827121922"
+        },
+        "storageAccountName": {
+            "value": "mcdmybsa"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1ls"
+        },
+        "adminUsername": {
+            "value": "azureuser"
+        },
+        "adminPublicKey": {
+            "value": null
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "mcdmybsa"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/**22**56-2**4-*61*-****-****ee7e****/resourceGroups/mc-dmyb/providers/Microsoft.Storage/storageAccounts/mcdmybsa"
+        }
+    }
+}
